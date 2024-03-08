@@ -5,6 +5,10 @@ const LOGIN = document.querySelector(".login");
 const ROOM = document.querySelector(".room");
 const supportedEmojis = ['👍', '❤️', '😄', '😢', '😡'];
 
+document.getElementById('homeButton').addEventListener('click', function() {
+  window.location.href = '/';
+});
+
 // Custom validation on the password reset fields
 const passwordField = document.querySelector(".profile input[name=password]");
 const repeatPasswordField = document.querySelector(".profile input[name=repeatPassword]");
