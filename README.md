@@ -5,7 +5,13 @@
 **DUE: Friday, March 8 by 5:00pm**
 
 https://classroom.github.com/a/qeha1A1z
-
+## Readme
+- Name: Yuzhuo Bai
+- Classmates: Yutong Sun, Qinyu Li
+- configure: venv (for macOS)
+```
+. venv/bin/activate
+```
 ## Introduction
 
 As a capstone project for Web Development, we're going to combine the various

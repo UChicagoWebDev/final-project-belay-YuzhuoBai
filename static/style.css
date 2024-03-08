@@ -1,0 +1,663 @@
+/* Global styles */
+body {
+    background-color: #333366;
+    margin: 0;
+  }
+  
+  .container {
+    width: 900px;
+    height: 100%;
+    margin: auto;
+    padding: 0 30px 0 30px;
+    background-color: white;
+    box-shadow: 0 0 20px black;
+    font-family: sans-serif;
+  }
+  
+  button {
+    color: white;
+    text-shadow: -1px -1px 2px black;
+    font-family: sans-serif;
+    background-color: orange;
+    padding: 6px;
+    border-radius: 4px;
+    will-change: transform;
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+  }
+  
+  .loginHeader {
+    display: flex;
+    margin-left: auto;
+    z-index: 5;
+    height: 44px;
+  }
+  
+  .loginHeader > div {
+    font-size: 18px;
+    color: white;
+    font-family: sans-serif;
+    text-decoration: none;
+    padding: 20px 30px 10px 30px;
+    border-radius: 0 0 8px 8px;
+    margin: -10px 10px 0 0;
+    will-change: transform;
+    transition: transform 250ms;
+  }
+  
+  .loginHeader > div:hover {
+    transform: translateY(4px);
+    box-shadow: 0 4px 8px #ffffa2;
+  }
+  
+  .loginHeader .loggedOut {
+    background-color: orange;
+    text-shadow: -1px -1px 2px black;
+  }
+  
+  .loginHeader .loggedIn {
+    background-color: lightsalmon;
+    color: white;
+    text-shadow: 0 0 2px brown;
+    font-size: 18px;
+  }
+  
+  .material-symbols-outlined {
+    display: inline-flex;
+    vertical-align: bottom;
+  }
+  
+  .alignedForm {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 100%;
+  }
+  
+  .alignedForm > * {
+    padding: 4px;
+    margin: 6px;
+  }
+  
+  .alignedForm input:invalid {
+    border: 1px dashed lightcoral;
+    border-radius: 1px;
+  }
+  
+  .alignedForm error {
+    color: gray;
+    display: none;
+  }
+  .alignedForm input:invalid ~ error {
+    display: inline;
+  }
+  
+  .alignedForm button {
+    margin-right: auto;
+  }
+  
+  .header {
+    display: flex;
+    background-color: white;
+    color: gray;
+    font-family: "Rowdies", cursive;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px 8px darkslateblue;
+  }
+  
+  .header h2 {
+    position: relative;
+    z-index: 3;
+    font-size: 32px;
+    color: white;
+    text-shadow: 1px 1px 5px black, 3px 3px 2px orange, -3px -1px 2px blue;
+    font-family: "Rowdies", cursive;
+    padding: 10px;
+    display: block;
+    justify-content: start;
+  }
+  
+  .header h2 a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .header h4 {
+    position: absolute;
+    left: 100px;
+    top: -1.4em;
+    z-index: 2;
+    font-size: 100px;
+    color: white;
+    text-shadow: 0 0 5px red;
+  }
+  
+  .header .roomDetail {
+    flex-basis: auto;
+    align-self: flex-end;
+    margin-left: 20px;
+    padding: 30px;
+    display: inline;
+    font-weight: 100;
+  }
+  
+  .header .roomDetail h3 {
+    font-weight: 100;
+    font-size: medium;
+    color: gray;
+  }
+  
+  .header .roomDetail h3 strong {
+    margin-left: 0.5em;
+    font-weight: bold;
+    font-size: x-large;
+    color: #666;
+  }
+  
+  .header .roomDetail h3 input {
+    font-size: x-large;
+    margin-left: 0.5em;
+    color: #666;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .header .roomDetail h3 button {
+    display: inline-block;
+    vertical-align: bottom;
+  }
+  
+  .header .roomDetail a {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: large;
+    color: hotpink;
+  }
+  
+  .clip {
+    overflow: hidden;
+  }
+  
+  .clip .container {
+    padding-top: 20px;
+  }
+  
+  /* Splash screen */
+  .splash .splashHeader {
+    display: flex;
+  }
+  
+  .splash .hero {
+    margin: auto;
+    width: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+  }
+  
+  .splash h1,
+  h2,
+  h3 {
+    font-family: "Rowdies", cursive;
+  }
+  
+  .splash .hero h1 {
+    display: block;
+    grid-column: 1/3;
+    grid-row: 1/3;
+    z-index: 4;
+    margin: auto;
+  
+    font-size: 80px;
+    color: white;
+    text-shadow: 1px 1px 5px black, 3px 3px 2px orange, -3px -1px 2px blue;
+    font-family: "Rowdies", cursive;
+  }
+  
+  .splash .hero h2 {
+    display: block;
+    grid-column: 1/3;
+    grid-row: 1/3;
+    z-index: 3;
+    margin: auto;
+  
+    font-size: 240px;
+    color: white;
+    text-shadow: 0px 0px 20px red, 0px 0px 40px darkred;
+  }
+  
+  .splash .logo {
+    display: grid;
+    grid-column: 1/3;
+    grid-row: 1/3;
+    height: 300px;
+    width: 600px;
+  }
+  
+  .splash .logo img {
+    grid-column: 1/3;
+    grid-row: 1/3;
+  }
+  
+  .splash .logo img#tv {
+    height: 300px;
+    padding-left: 60px;
+  }
+  
+  .splash .logo img#popcorn {
+    height: 200px;
+    padding-top: 100px;
+  }
+  
+  .splash .hero form {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  
+  .splash .hero button {
+    margin: 20px 40px 20px 40px;
+    padding: 10px 20px 10px 20px;
+    font-size: 24px;
+    background-color: orange;
+    border: 7px outset orange;
+    border-radius: 20px;
+    box-shadow: 0 0 4px magenta;
+    filter: drop-shadow(10px 4px 4px #4444dd);
+  }
+  
+  .splash .hero button:hover {
+    box-shadow: 0 2px 5px magenta;
+  }
+  
+  .splash .roomList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .splash .roomList > a {
+    display: block;
+    flex: 1 1 30%;
+    padding: 8px;
+    margin: 4px;
+    color: white;
+    text-shadow: 0 1px 1px darkslateblue;
+    border-radius: 4px;
+    background-color: gray;
+    box-shadow: 0 4px 8px lightcyan;
+  }
+  
+  .splash .roomList > a:hover {
+    background-color: rgb(75, 101, 122);
+    border-radius: 3px;
+  }
+  
+  .splash .roomList a {
+    text-decoration: none;
+    will-change: transform;
+    transition: transform 250ms;
+  }
+  
+  .splash .roomList a:hover {
+    transform: scale(1.025);
+  }
+  
+  /* Profile screen */
+  .profile {
+    display: block;
+  }
+  
+  .profile .exit {
+    margin-top: 40px;
+  }
+  .profile .exit.goToSplash {
+    grid-column: 2/3;
+  }
+  
+  .profile .exit.logout {
+    grid-column: 3/4;
+    background-color: lightcoral;
+  }
+  
+  /* Login screen */
+  .login {
+    display: block;
+  }
+  
+  .login .failed {
+    margin-top: 4em;
+    display: none;
+  }
+  
+  .login .failed .message {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 8px;
+    color: white;
+    border-radius: 5px;
+    background-color: lightcoral;
+    box-shadow: 0 0 5px 3px lightcoral;
+  }
+  
+  .login .failed button {
+    margin-left: 20px;
+    margin-right: auto;
+    padding: 12px;
+  }
+  
+  /* Room screen */
+  .room .app-container {
+    width: 900px;
+    height: 100%;
+    margin: auto;
+    padding: 0 30px 0 30px;
+    background-color: white;
+    box-shadow: 0 0 20px black;
+    font-family: sans-serif;
+    padding-top: 20px;
+    display: flex;
+    height: 100%;
+  }
+  
+  .room .sidebar {
+    min-width: 200px;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+  }
+  
+  .room .rooms {
+    padding: 10px;
+  }
+  
+  .room .roomList {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .room .roomList > a {
+    display: block;
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 4px;
+    color: white;
+    text-shadow: 0 1px 1px darkslateblue;
+    border-radius: 4px;
+    background-color: gray;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-align: center;
+    text-decoration: none;
+    will-change: transform;
+    transition: transform 250ms;
+  }
+  
+  .room .roomList > a:last-child {
+    margin-bottom: 0;
+  }
+  
+  .room .roomList > a:hover {
+    background-color: rgb(75, 101, 122);
+    border-radius: 3px;
+    transform: scale(1.025);
+  }
+  
+  .room .chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .room .chat {
+    flex: 1;
+    overflow-y: auto;
+  }
+  
+  .room .chat .messages {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .room .chat message {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid lightgray;
+    padding: 10px;
+    position: relative;
+  }
+  
+  .room .chat message .message-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+  }
+  
+  .room .chat message author {
+    color: #c93;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .room .chat message content {
+    margin-bottom: 5px;
+  }
+  
+  .room .chat message .reply-count {
+    color: #999;
+    font-size: 0.8em;
+  }
+  
+  .room .chat message .reactions {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    min-height: 30px; /* 添加最小高度 */
+    padding: 5px 0; /* 添加上下内边距 */
+  }
+  
+  .room .chat message .reactions button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 2px 5px;
+  
+  }
+
+  .room .chat message .reactions button:hover {
+    text-decoration: underline;
+  }
+  
+  .room .chat message .reaction-info {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 5px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    padding: 2px 5px;
+    font-size: 12px;
+  }
+
+.room .chat message .reaction-users {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1;
+  display: none;
+}
+
+.room .chat message .reaction-info:hover .reaction-users {
+  display: block;
+}
+
+.room .chat message .reaction-info .reaction-users {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1;
+  display: none;
+}
+
+  .room .comment_box {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+  }
+  
+  .room .comment_box textarea {
+    display: block;
+    width: 100%;
+    resize: vertical;
+  }
+  
+  .room .comment_box button {
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    margin-top: 15px;
+  }
+  
+  .room .comment_box label {
+    display: block;
+    font-family: "Rowdies", cursive;
+    margin-bottom: 10px;
+  }
+  
+  .room .thread-container {
+    min-width: 300px;
+    border-left: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .room .thread {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+  }
+  .room .thread-container .thread-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .room .thread-container .close-thread-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .room .thread .parent-message {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-weight: bold; 
+  }
+  
+  .room .thread .reply-messages {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .room .thread message author {
+    color: #c93;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .room .thread message content {
+    margin-bottom: 5px;
+  }
+  .room .reply_box {
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  .room .reply_box textarea {
+    display: block;
+    width: 100%;
+    resize: vertical;
+  }
+  
+  .room .reply_box button {
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    margin-top: 15px;
+  }
+  
+  .room .reply_box label {
+    display: block;
+    font-family: "Rowdies", cursive;
+    margin-bottom: 10px;
+  }
+  
+  
+  /* Responsive styling */
+@media (max-width: 767px) {
+  .room .app-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+}
+  
+  @media (max-width: 767px) {
+    .room .app-container {
+      flex-direction: column;
+    }
+  
+    .room .sidebar,
+    .room .chat-container,
+    .room .thread-container {
+      width: 100%;
+    }
+  
+    .room .sidebar,
+    .room .thread-container {
+      display: none;
+    }
+  
+    .room .sidebar.active,
+    .room .thread-container.active {
+      display: block;
+    }
+  }
+
+
+  
+  /* 404 page */
+  .notFound h1 {
+    margin: 20px 20px -300px 20px;
+    font-size: 500px;
+    color: #f0c0c0;
+  }
+  
+  .notFound .message {
+    margin-left: 100px;
+    text-shadow: 0 0 6px white;
+  }
+  
+  .hide {
+    display: none;
+  }
