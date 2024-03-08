@@ -150,8 +150,7 @@ def allRoom():
     roomList = []
     for room in rooms:
         room_id = room["id"]
-        
-        # 获取用户在该房间已读的最后一条消息的ID
+
         user_last_viewed = query_db('''
             SELECT last_message_id
             FROM user_message_views
@@ -159,8 +158,7 @@ def allRoom():
         ''', [user_id, room_id], one=True)
         
         user_last_viewed_id = user_last_viewed['last_message_id'] if user_last_viewed else 0
-        
-        # 计算未读消息的数量
+
         unread_count = query_db('''
             SELECT COUNT(*)
             FROM messages
@@ -298,7 +296,7 @@ def get_thread(message_id):
         return jsonify({"error": "Database error occurred"}), 500
     except Exception as e:
         print(f"Unexpected error occurred: {e}")
-        traceback.print_exc()  # 打印详细的错误信息
+        traceback.print_exc()
         return jsonify({"error": "Unexpected error occurred"}), 500
 
 @app.route('/api/rooms/<int:room_id>/messages/<int:message_id>/thread', methods=['POST'])
@@ -332,29 +330,24 @@ def get_reaction_users(reaction_id):
 @app.route('/api/rooms/not_logged', methods = ['GET'])
 # @require_api_key
 def allRoom1():
-#     user_id = get_userId_from_apiKey()
 
-#     if user_id is None:
-#         return jsonify({"error": "Invalid API Key"}), 403
-
-  rooms = query_db('select * from channels')  # 获取所有房间的信息
+  rooms = query_db('select * from channels')
 
   roomList = []
   for room in rooms:
-      room_id = room["id"]  # 获取当前房间的ID
+      room_id = room["id"]
 
-      # 直接获取房间的总消息数量
       total_messages_count = query_db('''
           SELECT COUNT(*)
           FROM messages
           WHERE channel_id = ?
-      ''', [room_id], one=True)[0]  # 计算当前房间的消息总数
+      ''', [room_id], one=True)[0]
 
       room_info = {
           "room_id": room_id,
           "room_name": room["name"],
-          "total_messages": total_messages_count  # 房间的总消息数量
+          "total_messages": total_messages_count
       }
-      roomList.append(room_info)  # 将房间信息添加到列表中
+      roomList.append(room_info)
 
-  return jsonify(roomList), 200  # 以JSON格式返回房间列表
+  return jsonify(roomList), 200
